@@ -1,0 +1,39 @@
+# env/sellers/default/seller.yaml Test Seller
+version: 1
+#seller:
+name: "Default Service GmbH"
+leitweg_id: "991-12345-99" 
+address:
+  street: "Techpark 99"
+  zip: "80331"
+  city: "München"
+  country: "deutschland"
+tax:
+  vat_id: "DE123456799"
+  tax_number: "143/123/45699"
+contact:
+  name: "Max Macher"
+  email: "rechnung@tfw-tech.de"
+  phone: "+49 89 1234599"
+bank:
+  name: "Postbank"
+  iban: "DE02700100800030876808"
+  bic: "BYLABCDEFGH"
+legal:
+  form: "GmbH"
+  hrb: "HRB 123456 AG München"
+  managing_director: "Georg Mustermann"
+din_5008:
+  absender_zeile: "Default Frameworks | Techpark 99 | 80331 München"
+  impressum:
+    adresse_zeile: "Default Frameworks | Default Service GmbH | Techpark 99 | 80331 München"
+    kontakt_zeile: "Tel: +49 8002 123 499 | Mail: info@default-services.eu | www.tiny-frameworks.eu"
+    bank_zeile: "Muster Bank | IBAN: DE12 3456 7890 1234 5678 90 | BIC: BYABCDEFGHX"
+    legal_zeile: "GmbH Gesellschaft | Sitz: München | HRB: 123499 AG München | USt ID: DE123456799"
+paths:
+  log_file: "defaultSeller.log"
+templates:
+  par: "defaultInvoice.par.tpl"
+  xml: "defaultXrechnung.xml.tpl"
+  ott: "defaultInvoice.ott"
+   

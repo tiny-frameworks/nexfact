@@ -1,0 +1,29 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[lfs]
+	repositoryformatversion = 0
+
+[remote "origin"]
+	url = http://localhost:3000/tiny-frameworks/nexfact.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[remote "codeberg"]
+	url = ssh://git@codeberg.org/tiny-frameworks/nexfact.git
+	fetch = +refs/heads/*:refs/remotes/codeberg/*
+[remote "github"]
+	url = https://github.com/tiny-frameworks/nexfact.git
+	fetch = +refs/heads/*:refs/remotes/github/*
+
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+
+[lfs "http://localhost:3000/tiny-frameworks/nexfact.git/info/lfs"]
+	access = basic
+[lfs "https://github.com/tiny-frameworks/nexfact.git/info/lfs"]
+	access = basic
+[lfs "https://codeberg.org/tiny-frameworks/nexfact.git/info/lfs"]
+	access = basic
+

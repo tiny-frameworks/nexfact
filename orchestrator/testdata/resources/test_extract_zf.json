@@ -1,0 +1,12 @@
+{
+   "mandant": {
+    "seller": "testSeller"
+  },
+  "options": {
+    "queue": "extract",
+    "pdf": "testdata/resources/test_extract_mit_zf.pdf",
+    "factur-x": "",
+    "attachments": [
+    ]
+  }
+}

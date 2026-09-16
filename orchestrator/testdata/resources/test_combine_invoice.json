@@ -1,0 +1,17 @@
+{
+  "mandant": {
+    "seller": "testSeller"
+  },
+  "options": {
+    "queue": "combine",
+    "pdf": "testdata/resources/test_combine_invoice.pdf",
+    "factur-x": "testdata/resources/test_combine_invoice.xml",
+    "attachments": [
+        "testdata/resources/test_attachment.png",
+        "testdata/resources/test_attachment.pdf"
+    ]
+  },
+  "invoice": {
+    "invoice_id": "RE-0815-combine-mit"
+  }
+}

@@ -1,0 +1,11 @@
+{
+   "mandant": {
+    "seller": "testSeller"
+  },
+  "options": {
+    "queue": "validate",
+    "pdf": "testdata/resources/test_valid_zf.pdf",
+    "attachments": [
+    ]
+  }
+}

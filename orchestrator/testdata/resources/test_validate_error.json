@@ -1,0 +1,11 @@
+{
+   "mandant": {
+    "seller": "testSeller"
+  },
+  "options": {
+    "queue": "validate",
+    "factur-x": "testdata/resources/test_error_fx.xml",
+    "attachments": [
+    ]
+  }
+}

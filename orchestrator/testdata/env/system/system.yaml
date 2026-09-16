@@ -1,0 +1,41 @@
+# env/system.yaml
+version: 1
+paths:
+  countries_csv: "countries.csv"
+  units_csv: "units.csv"
+  currencies_csv: "currencies.csv"
+  payments_csv: "payments.csv"
+  templates_dir: "templates"
+engine: 
+  heartbeat_frequency: 30s
+  watch_sleep: 2s
+  cmd_timeout: 10s
+  config_reload: 240s
+  default_queue: "zugferd"    
+  container_engine: "podman"    # [ podman | docker ]
+  pdf_engine: "loEngine.odt"
+  pdf_provider: "native"        # [ native | container ]
+  zugferd_engine: "mustang-cli.jar"
+  zugferd_provider: "native"  # [ native | container ]
+caches:
+  seller_cache:
+    ttl: 8h
+    cleanup: 4h
+    capacity: 4
+  country_cache:
+    ttl: 8h
+    cleanup: 4h
+    capacity: 4
+  currency_cache:
+    ttl: 8h
+    cleanup: 4h
+    capacity: 4
+  unit_cache:
+    ttl: 8h
+    cleanup: 4h
+    capacity: 10
+  payment_cache:
+    ttl: 8h
+    cleanup: 4h
+    capacity: 4
+

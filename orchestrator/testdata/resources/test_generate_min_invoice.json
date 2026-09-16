@@ -1,0 +1,89 @@
+{
+  "mandant": {
+    "seller": "testSeller"
+  },
+  "invoice": {
+    "currency": "EUR",
+    "invoice_id": "RE-0814-min",
+    "issue_date": "20260105",
+    "service_date": "20260104",
+    "buyer": {
+      "id": "471115",
+      "name1": "Franz Fröhlich AG",
+      "name2": "Einkauf Herr Ansprech",
+      "name3": "Carnica",
+      "street": "Musterstrasse 64",
+      "zip": "01221",
+      "city": "Musterdorf",
+      "country": "Deutschland"
+    },
+    "info": {
+	  "info_date": "20260102"
+    },
+    "items": [
+      {
+        "pos": 1,
+        "id": "A1",
+        "description": "Go Entwicklungsservice",
+        "quantity": 10.5,
+        "unit": "Stunde",
+        "net_price": 95.00,
+        "line_total": 997.5,
+        "tax_rate": 19
+      },
+      {
+        "pos": 2,
+        "id": "B5",
+        "description": "Dokumentations-Pauschale",
+        "quantity": 1,
+        "unit": "Pauschale",
+        "net_price": 45.50,
+        "line_total": 45.50,
+        "tax_rate": 19
+      },
+      {
+        "pos": 3,
+        "id": "4711",
+        "description": "Go-Grundkurs für Fortgeschrittene",
+        "quantity": 1,
+        "unit": "Stück",
+        "net_price": 150.00,
+        "line_total": 150.00,
+        "tax_rate": 19
+      },
+      {
+        "pos": 4,
+        "id": "0815",
+        "description": "LibreOffice Basic Beruhigungstee",
+        "quantity": 5,
+        "unit": "Liter",
+        "net_price": 3.50,
+        "line_total": 17.50,
+        "tax_rate": 7
+      }
+    ],
+    "vats": [
+      {
+        "pos": 1,
+        "id": "S",
+        "description": "USt",
+        "vat_base": 1193.00,
+        "vat_price": 226.67,
+        "tax_rate": 19
+      },
+      {
+        "pos": 2,
+        "id": "S",
+        "description": "USt",
+        "vat_base": 17.50,
+        "vat_price": 1.23,
+        "tax_rate": 7
+      }
+    ],
+    "totals": {
+      "line_total_amount": 1210.50,
+      "tax_total_amount": 227.91,
+      "grand_total_amount": 1438.41
+    }
+  }
+}

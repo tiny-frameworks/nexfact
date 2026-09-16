@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rsm:CrossIndustryInvoice 
+  xmlns:rsm="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100" 
+  xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100" 
+  xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100">
+<rsm:ExchangedDocumentContext>
+  <ram:BusinessProcessSpecifiedDocumentContextParameter>
+    <ram:ID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</ram:ID>
+  </ram:BusinessProcessSpecifiedDocumentContextParameter>
+  <ram:GuidelineSpecifiedDocumentContextParameter>
+    <ram:ID>urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0</ram:ID>
+  </ram:GuidelineSpecifiedDocumentContextParameter>
+</rsm:ExchangedDocumentContext>
+<rsm:ExchangedDocument>
+  <ram:ID>RE-2026-001-peppol</ram:ID>
+  <ram:TypeCode>380</ram:TypeCode>
+  <ram:IssueDateTime>
+    <udt:DateTimeString format="102">20260105</udt:DateTimeString>
+  </ram:IssueDateTime>
+</rsm:ExchangedDocument>
+<rsm:SupplyChainTradeTransaction>
+  <ram:IncludedSupplyChainTradeLineItem>
+    <ram:AssociatedDocumentLineDocument>
+      <ram:LineID>1</ram:LineID>
+    </ram:AssociatedDocumentLineDocument>
+    <ram:SpecifiedTradeProduct>
+      <ram:Name>Go Entwicklungsservice</ram:Name>
+    </ram:SpecifiedTradeProduct>
+    <ram:SpecifiedLineTradeAgreement>
+      <ram:NetPriceProductTradePrice>
+        <ram:ChargeAmount>95.00</ram:ChargeAmount>
+      </ram:NetPriceProductTradePrice>
+    </ram:SpecifiedLineTradeAgreement>
+    <ram:SpecifiedLineTradeDelivery>
+      <ram:BilledQuantity unitCode="HUR">10.50</ram:BilledQuantity>
+    </ram:SpecifiedLineTradeDelivery>
+    <ram:SpecifiedLineTradeSettlement>
+    <ram:ApplicableTradeTax>
+        <ram:TypeCode>VAT</ram:TypeCode>
+        <ram:CategoryCode>S</ram:CategoryCode> <ram:RateApplicablePercent>19.00</ram:RateApplicablePercent>
+    </ram:ApplicableTradeTax>
+      <ram:SpecifiedTradeSettlementLineMonetarySummation>
+        <ram:LineTotalAmount>997.50</ram:LineTotalAmount>
+      </ram:SpecifiedTradeSettlementLineMonetarySummation>
+    </ram:SpecifiedLineTradeSettlement>
+  </ram:IncludedSupplyChainTradeLineItem>
+  <ram:IncludedSupplyChainTradeLineItem>
+    <ram:AssociatedDocumentLineDocument>
+      <ram:LineID>2</ram:LineID>
+    </ram:AssociatedDocumentLineDocument>
+    <ram:SpecifiedTradeProduct>
+      <ram:Name>Dokumentations-Pauschale</ram:Name>
+    </ram:SpecifiedTradeProduct>
+    <ram:SpecifiedLineTradeAgreement>
+      <ram:NetPriceProductTradePrice>
+        <ram:ChargeAmount>45.50</ram:ChargeAmount>
+      </ram:NetPriceProductTradePrice>
+    </ram:SpecifiedLineTradeAgreement>
+    <ram:SpecifiedLineTradeDelivery>
+      <ram:BilledQuantity unitCode="LS">1.00</ram:BilledQuantity>
+    </ram:SpecifiedLineTradeDelivery>
+    <ram:SpecifiedLineTradeSettlement>
+    <ram:ApplicableTradeTax>
+        <ram:TypeCode>VAT</ram:TypeCode>
+        <ram:CategoryCode>S</ram:CategoryCode> <ram:RateApplicablePercent>19.00</ram:RateApplicablePercent>
+    </ram:ApplicableTradeTax>
+      <ram:SpecifiedTradeSettlementLineMonetarySummation>
+        <ram:LineTotalAmount>45.50</ram:LineTotalAmount>
+      </ram:SpecifiedTradeSettlementLineMonetarySummation>
+    </ram:SpecifiedLineTradeSettlement>
+  </ram:IncludedSupplyChainTradeLineItem>
+  <ram:IncludedSupplyChainTradeLineItem>
+    <ram:AssociatedDocumentLineDocument>
+      <ram:LineID>3</ram:LineID>
+    </ram:AssociatedDocumentLineDocument>
+    <ram:SpecifiedTradeProduct>
+      <ram:Name>Go-Grundkurs für Fortgeschrittene</ram:Name>
+    </ram:SpecifiedTradeProduct>
+    <ram:SpecifiedLineTradeAgreement>
+      <ram:NetPriceProductTradePrice>
+        <ram:ChargeAmount>150.00</ram:ChargeAmount>
+      </ram:NetPriceProductTradePrice>
+    </ram:SpecifiedLineTradeAgreement>
+    <ram:SpecifiedLineTradeDelivery>
+      <ram:BilledQuantity unitCode="H87">1.00</ram:BilledQuantity>
+    </ram:SpecifiedLineTradeDelivery>
+    <ram:SpecifiedLineTradeSettlement>
+    <ram:ApplicableTradeTax>
+        <ram:TypeCode>VAT</ram:TypeCode>
+        <ram:CategoryCode>S</ram:CategoryCode> <ram:RateApplicablePercent>19.00</ram:RateApplicablePercent>
+    </ram:ApplicableTradeTax>
+      <ram:SpecifiedTradeSettlementLineMonetarySummation>
+        <ram:LineTotalAmount>150.00</ram:LineTotalAmount>
+      </ram:SpecifiedTradeSettlementLineMonetarySummation>
+    </ram:SpecifiedLineTradeSettlement>
+  </ram:IncludedSupplyChainTradeLineItem>
+  <ram:IncludedSupplyChainTradeLineItem>
+    <ram:AssociatedDocumentLineDocument>
+      <ram:LineID>4</ram:LineID>
+    </ram:AssociatedDocumentLineDocument>
+    <ram:SpecifiedTradeProduct>
+      <ram:Name>LibreOffice Basic Beruhigungstee</ram:Name>
+    </ram:SpecifiedTradeProduct>
+    <ram:SpecifiedLineTradeAgreement>
+      <ram:NetPriceProductTradePrice>
+        <ram:ChargeAmount>3.50</ram:ChargeAmount>
+      </ram:NetPriceProductTradePrice>
+    </ram:SpecifiedLineTradeAgreement>
+    <ram:SpecifiedLineTradeDelivery>
+      <ram:BilledQuantity unitCode="LTR">5.00</ram:BilledQuantity>
+    </ram:SpecifiedLineTradeDelivery>
+    <ram:SpecifiedLineTradeSettlement>
+    <ram:ApplicableTradeTax>
+        <ram:TypeCode>VAT</ram:TypeCode>
+        <ram:CategoryCode>S</ram:CategoryCode> <ram:RateApplicablePercent>7.00</ram:RateApplicablePercent>
+    </ram:ApplicableTradeTax>
+      <ram:SpecifiedTradeSettlementLineMonetarySummation>
+        <ram:LineTotalAmount>17.50</ram:LineTotalAmount>
+      </ram:SpecifiedTradeSettlementLineMonetarySummation>
+    </ram:SpecifiedLineTradeSettlement>
+  </ram:IncludedSupplyChainTradeLineItem>
+  <ram:ApplicableHeaderTradeAgreement>
+    <ram:BuyerReference>991-12345-76</ram:BuyerReference>
+    <ram:SellerTradeParty>
+      <ram:Name>Tiny Frameworks Tech Service GmbH</ram:Name>
+      <ram:DefinedTradeContact>
+        <ram:PersonName>Max Macher</ram:PersonName>
+        <ram:TelephoneUniversalCommunication>
+            <ram:CompleteNumber>+49 89 1234567</ram:CompleteNumber>
+        </ram:TelephoneUniversalCommunication>
+        <ram:EmailURIUniversalCommunication>
+          <ram:URIID>rechnung@tfw-tech.de</ram:URIID>
+        </ram:EmailURIUniversalCommunication>
+      </ram:DefinedTradeContact>
+      <ram:PostalTradeAddress>
+        <ram:PostcodeCode>80331</ram:PostcodeCode>
+        <ram:LineOne>Techpark 42</ram:LineOne>
+        <ram:CityName>München</ram:CityName>
+        <ram:CountryID>DE</ram:CountryID>
+      </ram:PostalTradeAddress>
+      <ram:URIUniversalCommunication>
+        <ram:URIID schemeID="EM">rechnung@tfw-tech.de </ram:URIID>
+      </ram:URIUniversalCommunication>
+      <ram:SpecifiedTaxRegistration>
+        <ram:ID schemeID="VA">DE123456789</ram:ID>
+      </ram:SpecifiedTaxRegistration>
+    </ram:SellerTradeParty>
+    <ram:BuyerTradeParty>
+      <ram:Name>Franz Fröhlich AG</ram:Name>
+      <ram:PostalTradeAddress>
+      <ram:PostcodeCode>01221</ram:PostcodeCode>
+        <ram:LineOne>Musterstrasse 64</ram:LineOne>
+        <ram:CityName>Musterdorf</ram:CityName>
+        <ram:CountryID>AT</ram:CountryID>
+      </ram:PostalTradeAddress>
+      <ram:URIUniversalCommunication>
+        <ram:URIID schemeID="EM">master@bees.bee </ram:URIID>
+      </ram:URIUniversalCommunication>
+      </ram:BuyerTradeParty>
+    </ram:ApplicableHeaderTradeAgreement>
+    <ram:ApplicableHeaderTradeDelivery>
+      <ram:ActualDeliverySupplyChainEvent>
+        <ram:OccurrenceDateTime>
+          <udt:DateTimeString format="102">20260104</udt:DateTimeString>
+        </ram:OccurrenceDateTime>
+      </ram:ActualDeliverySupplyChainEvent>
+    </ram:ApplicableHeaderTradeDelivery>
+    <ram:ApplicableHeaderTradeSettlement>
+      <ram:InvoiceCurrencyCode>EUR</ram:InvoiceCurrencyCode>
+      <ram:SpecifiedTradeSettlementPaymentMeans>
+      <ram:TypeCode>58</ram:TypeCode>
+      <ram:PayeePartyCreditorFinancialAccount>
+        <ram:IBANID>DE02700100800030876808</ram:IBANID>
+      </ram:PayeePartyCreditorFinancialAccount>
+      </ram:SpecifiedTradeSettlementPaymentMeans>
+      <ram:ApplicableTradeTax>
+        <ram:CalculatedAmount>226.67</ram:CalculatedAmount>
+        <ram:TypeCode>VAT</ram:TypeCode>
+        <ram:BasisAmount>1193.00</ram:BasisAmount>
+        <ram:CategoryCode>S</ram:CategoryCode>
+        <ram:RateApplicablePercent>19.00</ram:RateApplicablePercent>
+      </ram:ApplicableTradeTax>
+      <ram:ApplicableTradeTax>
+        <ram:CalculatedAmount>1.23</ram:CalculatedAmount>
+        <ram:TypeCode>VAT</ram:TypeCode>
+        <ram:BasisAmount>17.50</ram:BasisAmount>
+        <ram:CategoryCode>S</ram:CategoryCode>
+        <ram:RateApplicablePercent>7.00</ram:RateApplicablePercent>
+      </ram:ApplicableTradeTax>
+      <ram:BillingSpecifiedPeriod><ram:StartDateTime>
+          <udt:DateTimeString format="102">20250104</udt:DateTimeString>
+        </ram:StartDateTime>
+      <ram:EndDateTime>
+          <udt:DateTimeString format="102">20251231</udt:DateTimeString>
+        </ram:EndDateTime>
+      </ram:BillingSpecifiedPeriod>
+      <ram:SpecifiedTradePaymentTerms><ram:Description>innerhalb von 3 Tagen mit 3% Skonto. </ram:Description>
+        <ram:DueDateDateTime>
+            <udt:DateTimeString format="102">20260302</udt:DateTimeString>
+        </ram:DueDateDateTime>
+      </ram:SpecifiedTradePaymentTerms>      
+      <ram:SpecifiedTradeSettlementHeaderMonetarySummation>
+        <ram:LineTotalAmount>1210.50</ram:LineTotalAmount>
+        <ram:TaxBasisTotalAmount>1210.50</ram:TaxBasisTotalAmount>
+        <ram:TaxTotalAmount currencyID="EUR">227.90</ram:TaxTotalAmount>
+        <ram:GrandTotalAmount>1800.40</ram:GrandTotalAmount>
+        <ram:DuePayableAmount>1438.40</ram:DuePayableAmount>
+      </ram:SpecifiedTradeSettlementHeaderMonetarySummation>
+    </ram:ApplicableHeaderTradeSettlement>
+  </rsm:SupplyChainTradeTransaction>
+</rsm:CrossIndustryInvoice>
