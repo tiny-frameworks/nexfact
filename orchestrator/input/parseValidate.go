@@ -12,7 +12,7 @@ import (
 	"codeberg.org/tiny-frameworks/nexutils/errors"
 )
 
-const NEXGATE_SELLER = "NEXGATE_MANDANT"
+const NEXFACT_SELLER = "NEXFACT_MANDANT"
 
 func Parse(jsonData []byte) (job *InputJob, err error) {
 	if err := json.Unmarshal(jsonData, &job); err != nil {
@@ -35,7 +35,7 @@ func EnrichSeller(inputjob *InputJob) error {
 
 	if inputjob.Mandant.Seller == "" {
 		inputjob.Mandant.Seller = config.DefaultSeller
-		if envSeller := os.Getenv(NEXGATE_SELLER); envSeller != "" {
+		if envSeller := os.Getenv(NEXFACT_SELLER); envSeller != "" {
 			inputjob.Mandant.Seller = envSeller
 		}
 	}

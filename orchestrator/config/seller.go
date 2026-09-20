@@ -3,6 +3,15 @@
 
 package config
 
+import (
+	"fmt"
+	"os"
+	"path/filepath"
+
+	"codeberg.org/tiny-frameworks/nexutils/errors"
+	yaml "github.com/goccy/go-yaml"
+)
+
 type SellerConfig struct {
 	Version    int               `yaml:"version"`
 	Name       string            `yaml:"name"`
@@ -71,3 +80,81 @@ type TemplatesConfig struct {
 }
 
 const DefaultSeller = "default"
+
+var SellerParams *SellerConfig
+
+func LoadSeller(sellerID string) error {
+	sRoot := filepath.Join(SystemParams.EnvRoot, "sellers", sellerID)
+	seller := &SellerConfig{
+		SellerRoot: sRoot,
+	}
+
+	cfg, err := Caches["seller"].GetOrLoad(sellerID, seller.loader)
+	if err != nil {
+		return err
+	}
+
+	SellerParams = cfg.(*SellerConfig)
+
+	if err := normalizeSeller(); err != nil {
+		return err
+	}
+	if wErr := writeEnv(); wErr != nil {
+		return wErr
+	}
+
+	if err := checkContainer(); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (seller *SellerConfig) loader() (interface{}, error) {
+	yamlPath := filepath.Join(seller.SellerRoot, "seller.yaml")
+	data, err := os.ReadFile(yamlPath)
+	if err != nil {
+		return nil, err
+	}
+
+	var cfg SellerConfig
+	if err := yaml.Unmarshal(data, &cfg); err != nil {
+		return nil, err
+	}
+
+	cfg.SellerRoot = seller.SellerRoot
+	return &cfg, nil
+}
+
+func normalizeSeller() error {
+	absPath := func(base string, elem ...string) (string, error) {
+		p, err := filepath.Abs(filepath.Join(base, filepath.Join(elem...)))
+		if err != nil {
+			return "", errors.Wrap(
+				errors.ReadError,
+				fmt.Sprintf("can't build absolute path for components %v", elem),
+				"orchestrator.config.load.normalizeSeller",
+				err,
+			)
+		}
+		return p, nil
+	}
+
+	var err error
+	p := SellerParams.SellerRoot
+
+	if SellerParams.Paths.LogFile, err = absPath(p, "logs", SellerParams.Paths.LogFile); err != nil {
+		return err
+	}
+	if SellerParams.Templates.OttTemplate, err = absPath(p, "templates", SellerParams.Templates.OttTemplate); err != nil {
+		return err
+	}
+	if SellerParams.Templates.ParTemplate, err = absPath(p, "templates", SellerParams.Templates.ParTemplate); err != nil {
+		return err
+	}
+	if SellerParams.Templates.XmlTemplate, err = absPath(p, "templates", SellerParams.Templates.XmlTemplate); err != nil {
+		return err
+	}
+
+	return nil
+}

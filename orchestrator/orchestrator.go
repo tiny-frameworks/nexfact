@@ -7,7 +7,6 @@ import (
 	"context"
 	"fmt"
 	"os"
-
 	"path/filepath"
 	"strings"
 
@@ -145,60 +144,3 @@ func (o *Orchestrator) RunJsonJob(json []byte) (renderOutput *writer.RenderOutpu
 		)
 	}
 }
-
-/*
-func AsWebService(ctx context.Context, envRoot, addr string, heartbeatInterval time.Duration) error {
-	o, err := New(envRoot)
-	if err != nil {
-		return errors.Wrap(
-			errors.InternalError,
-			"can not create orchestrator",
-			"orchestrator.AsWebService()",
-			err,
-		)
-	}
-
-	setupWebService(ctx, o, addr, heartbeatInterval)
-	return nil
-}
-
-func setupWebService(ctx context.Context, o *Orchestrator, addr string, heartbeatInterval time.Duration) {
-	signalCtx, stop := signal.NotifyContext(ctx, os.Interrupt, syscall.SIGTERM)
-	defer stop()
-
-	if err := logger.SetupLogging(nil); err != nil {
-		log.Fatalf("Logger-Error: %v", err)
-	}
-
-	lgr := logger.Logger.With("component", "nexgate-service", "role", "server")
-	lgr.Info("=== Start nexgate-service ===")
-
-	nexgateService := rpc.NewNode(rpc.Options{
-		Addr:              addr,
-		HeartbeatInterval: heartbeatInterval,
-	})
-
-	// Handler-Instanz mit Abhängigkeiten erstellen
-	h := newWebServiceHandler(o, lgr)
-
-	// Aufgeräumte Registrierung
-	nexgateService.RegisterHandler("nexgate.process", h.handleProcess)
-	nexgateService.RegisterHandler("nexgate.echo", h.handleEcho)
-
-	go func() {
-		lgr.Info("Listen for incoming P2P connections...", "addr", addr)
-		if err := nexgateService.Start(); err != nil {
-			lgr.Error("Node 'nexgateService' stopped", "err", err)
-		}
-	}()
-
-	lgr.Info("Wait for SIGINT/SIGTERM or Context-Cancel...")
-	<-signalCtx.Done()
-	lgr.Info("Signal reveived, Shutdown service...", "reason", signalCtx.Err())
-
-	// Graceful shutdown of RPC Node
-	if err := nexgateService.Stop(); err != nil {
-		lgr.Error("Error shutting down the RPC node", "err", err)
-	}
-}
-*/

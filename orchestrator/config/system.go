@@ -3,7 +3,15 @@
 
 package config
 
-import "time"
+import (
+	"fmt"
+	"os"
+	"path/filepath"
+	"time"
+
+	"codeberg.org/tiny-frameworks/nexutils/errors"
+	yaml "github.com/goccy/go-yaml"
+)
 
 const (
 	ProviderNative    = "native"
@@ -51,4 +59,83 @@ type SingleCache struct {
 	TTL      time.Duration `yaml:"ttl"`
 	Cleanup  time.Duration `yaml:"cleanup"`
 	Capacity int           `yaml:"capacity"`
+}
+
+var SystemParams *SystemConfig
+
+func LoadSystem(envRoot string) error {
+	sRoot := filepath.Join(envRoot, "system")
+	yamlPath := filepath.Join(sRoot, "system.yaml")
+
+	data, err := os.ReadFile(yamlPath)
+	if err != nil {
+		return errors.Wrap(
+			errors.ReadError,
+			fmt.Sprintf("Can not read %s", yamlPath),
+			"orchestrator.config.LoadSystem",
+			err,
+		)
+	}
+
+	var cfg SystemConfig
+	if err := yaml.Unmarshal(data, &cfg); err != nil {
+		return errors.Wrap(
+			errors.InternalError,
+			fmt.Sprintf("Can not unmarshal data %v", data),
+			"orchestrator.config.LoadSystem",
+			err,
+		)
+	}
+
+	cfg.EnvRoot = envRoot
+	cfg.SystemRoot = sRoot
+	SystemParams = &cfg
+
+	if err = normalizeSystem(); err != nil {
+		return err
+	}
+
+	loadCaches()
+
+	return nil
+}
+
+func normalizeSystem() error {
+	// Small helper function to avoid code duplication
+	absPath := func(base string, elem ...string) (string, error) {
+		p, err := filepath.Abs(filepath.Join(base, filepath.Join(elem...)))
+		if err != nil {
+			return "", errors.Wrap(
+				errors.ReadError,
+				fmt.Sprintf("can't build absolute path for components %v", elem),
+				"orchestrator.config.load.normalizeSystem",
+				err,
+			)
+		}
+		return p, nil
+	}
+
+	var err error
+	p := SystemParams.SystemRoot
+
+	if SystemParams.Paths.CountriesCSV, err = absPath(p, "csv", SystemParams.Paths.CountriesCSV); err != nil {
+		return err
+	}
+	if SystemParams.Paths.UnitsCSV, err = absPath(p, "csv", SystemParams.Paths.UnitsCSV); err != nil {
+		return err
+	}
+	if SystemParams.Paths.CurrenciesCSV, err = absPath(p, "csv", SystemParams.Paths.CurrenciesCSV); err != nil {
+		return err
+	}
+	if SystemParams.Paths.PaymentsCSV, err = absPath(p, "csv", SystemParams.Paths.PaymentsCSV); err != nil {
+		return err
+	}
+	if SystemParams.Engine.PdfEngine, err = absPath(p, SystemParams.Engine.PdfEngine); err != nil {
+		return err
+	}
+	if SystemParams.Engine.ZugferdEngine, err = absPath(p, SystemParams.Engine.ZugferdEngine); err != nil {
+		return err
+	}
+
+	return nil
 }
