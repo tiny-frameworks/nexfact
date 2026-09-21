@@ -40,8 +40,8 @@ env/
 
 ```
 
-*Das Verzeichnis templates/ enthält die master .ott-Vorlagen, die von den PDF-Engines
-(sowohl native als auch im Container) benötigt werden, um das Dokument-Layout zu erzeugen.*
+*The Directory `templates/` contains the master .ott templates required by the PDF engines
+(both native and container-based) to generate the document layout.*
 
 ### 2. Container Mapped Directory Structure
 
@@ -60,9 +60,16 @@ When running in **Container Mode**, workers (e.g., Podman/Docker containers for 
 *Example Mount:*
 
 ```bash
-podman run -v ./env/sellers/default/data/pdfs:/data:Z nexfact/pdfmanager
-
+podman run -d --name nexfact-pdfwatcher \
+  -e NEXGATE_MODE=watch \
+  -e WATCH_DIR=/data/in \
+  -v ./data/pdfs/in:/data/in:Z \
+  -v ./data/artefacts:/data/artefacts:Z,shared \
+  -v ./data/pdfs/logs:/data/logs:Z \
+  nexfact-pdfmanager
 ```
+
+In the `env/sellers/[SellerName]` directory you will find the `start_seller_container.sh` shell script, which contains a complete example.
 
 ---
 ## How It Works (Job Lifecycle)

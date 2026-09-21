@@ -52,49 +52,6 @@ pdfWriter, err := writer.Get("native")
 
 ---
 
-### 3. `api/nexerrors`
-
-Implements centralized, structured error handling tailored for the nexgate ecosystem.
-
-```go
-type Error struct {
-    Code    Code
-    Message string
-    Path    string
-    Cause   error
-}
-
-```
-
-**Key Functions:**
-
-* `New(code Code, msg string, path string) *Error`: Creates a new structured error.
-* `Wrap(code Code, msg string, path string, cause error) *Error`: Wraps an existing error into the nexgate error domain.
-* `GetExitCode(err error) int`: Traverses the error chain and unwraps the appropriate OS exit code.
-* `LogError(log *slog.Logger, err error)`: Unpacks `nexerrors.Error` attributes (`code`, `path`, `cause`) and logs them as structured `slog` key-value pairs.
-
----
-
-### 4. `api/logger`
-
-Provides a thread-safe MultiHandler logger on top of Go's native `log/slog`. It forwards log entries simultaneously to the console and a rotating log file.
-
-**Usage:**
-
-```go
-import "codeberg.org/tiny-frameworks/nexfact/api/logger"
-
-func main() {
-    // Initialize logging output to file
-    logger.SetupLogging("./main.log")
-
-    logger.Logger.Info("Application initialized successfully")
-}
-
-```
-
----
-
 ## Design Principle
 
 Packages inside `api/` must **never depend on higher-level packages** (like `orchestrator` or `engines`). They serve strictly as lightweight, dependency-free contracts to avoid circular dependencies in the monorepo.

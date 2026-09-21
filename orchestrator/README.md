@@ -25,8 +25,6 @@ specialized `writer` engines.
 ```text
 orchestrator/
 ├── config/                  # Configuration loaders (system.yaml, seller.yaml, environment paths)
-├── internal/
-│   └── preprocessor/        # File staging, Base64 decoding, and URL hydration for RPC inputs
 ├── orchestrator.go          # Core Orchestrator struct, constructors, and RunJsonJob entry point
 ├── generateBase.go          # Pipeline step: Pure XML / PAR generation
 ├── generatePdf.go           # Pipeline step: Layout PDF generation via LibreOffice
@@ -42,29 +40,20 @@ orchestrator/
 The orchestrator abstracts the complex multi-step rendering process behind a clean, single-method API (`RunJsonJob`).
 
 ```text
-  +-----------------------------------+     +-----------------------------------+
-  | In-Process Call: RunJsonJob()     |     | Remote JSON-RPC Call:             |
-  +-----------------+-----------------+     | nexgate.process (via WebSocket)   |
-                    |                       +-----------------+-----------------+
-                    |                                         |
-                    |                                         v
-                    |                       +-----------------------------------+
-                    |                       | Preprocessor & Asset Staging      |
-                    |                       | (Decodes Base64 / Downloads URLs) |
-                    |                       +-----------------+-----------------+
-                    |                                         |
-                    +--------------------+--------------------+
-                                         |
-                                         v
-                     +---------------------------------------+
-                     | 1. Parse JSON -> MasterZugFerd Struct |
-                     +-------------------+-------------------+
-                                         |
-                                         v
-                     +---------------------------------------+
-                     | 2. Resolve Tenant & System Configs    |
-                     +-------------------+-------------------+
-                                         |
+               +-----------------------------------+  
+               | In-Process Call: RunJsonJob()     |  
+               +-----------------+-----------------+  
+                                 |
+                                 v
+             +---------------------------------------+
+             | 1. Parse JSON -> MasterZugFerd Struct |
+             +-------------------+-------------------+
+                                 |
+                                 v
+             +---------------------------------------+
+             | 2. Resolve Tenant & System Configs    |
+             +-------------------+-------------------+
+                                 |
            +---------------------+---------------------+
            |                     |                     |
            v                     v                     v
@@ -84,67 +73,9 @@ The orchestrator abstracts the complex multi-step rendering process behind a cle
 
 ---
 
-## WebService & RPC Integration
-
-The orchestrator can be booted as a standalone WebService powered by `nexutils/p2p/rpc` (WebSocket JSON-RPC 2.0).
-
-### Starting the WebService
-
-```go
-package main
-
-import (
-    "context"
-    "time"
-    "nexgate/orchestrator"
-)
-
-func main() {
-    ctx := context.Background()
-    envRoot := "/opt/nexgate-env"
-    addr := "127.0.0.1:8080"
-    heartbeat := 2 * time.Second
-
-    // Boots the RPC Node listening for incoming WebSocket connections
-    if err := orchestrator.AsWebService(ctx, envRoot, addr, heartbeat); err != nil {
-        panic(err)
-    }
-}
-
-```
-
-### Registered RPC Handlers
-
-* `nexgate.process`: Main processing endpoint. Accepts job specifications, stages files, runs the pipeline, and returns Base64-encoded output DTOs.
-* `nexgate.echo`: Diagnostic health check endpoint.
-
-### Connecting via RPC Client (with Custom Read/Write Limits)
-
-Because binary files (PDFs, attachments) are transmitted over WebSocket, clients should configure the node's `WriteReadLimit` (default is 1 MB):
-
-```go
-import "nexutils/p2p/rpc"
-
-clientNode := rpc.NewNode(rpc.Options{
-    Addr:              "127.0.0.1:8081",
-    HeartbeatInterval: 2 * time.Second,
-    WriteReadLimit:    10 * 1024 * 1024, // 10 MB limit for large document payloads
-})
-
-peer, err := clientNode.ConnectToPeer("127.0.0.1:8080")
-if err != nil {
-    log.Fatalf("Connection failed: %v", err)
-}
-
-```
-
----
-
 ## Job Payload Specification (`invoice.json`)
 
-The `orchestrator` consumes JSON payloads. Over direct `RunJsonJob` calls, file properties expect local file paths. Over `nexgate.process` RPC calls, file properties accept **Inline Base64 Data Objects** or **HTTP URLs**, which the Preprocessor automatically materializes.
-
----
+The `orchestrator` consumes JSON payloads. Over direct `RunJsonJob` calls, file properties expect local file paths. 
 
 ### Payload Structure Overview
 
@@ -214,44 +145,6 @@ Used for direct `orch.RunJsonJob()` execution on local filesystems:
 
 ```
 
-#### RPC / Base64-Inline Payload (`max-rpc-invoice.json`)
-
-Used for `nexgate.process` RPC calls where client files are transmitted in-payload:
-
-```json
-{
-  "mandant": {
-    "seller": "testSeller"
-  },
-  "options": {
-    "queue": "combine",
-    "pdf": {
-      "name": "test_combine_invoice.pdf",
-      "data": "JVBERi0xLj...=="
-    },
-    "factur-x": {
-      "name": "test_combine_invoice.xml",
-      "data": "PD94bWwgdmVyc2lvbj0iMS4wI...=="
-    },
-    "attachments": [
-      {
-        "name": "test_attachment.png",
-        "data": "iVBORw0KGgoAAAANSUhEUg...=="
-      }
-    ]
-  },
-  "invoice": {
-    "currency": "EUR",
-    "invoice_id": "RE-0815-combine-mit",
-    "buyer": { ... },
-    "items": [ ... ],
-    "vats": [ ... ],
-    "totals": { ... }
-  }
-}
-
-```
-
 ---
 
 ## API Entry Points
@@ -262,9 +155,6 @@ orch, err := orchestrator.NewDefault()
 
 // 2. Execute a complete invoice rendering pipeline in-process
 result, err := orch.RunJsonJob(jsonBytes)
-
-// 3. Alternatively, launch as a non-blocking WebSocket service
-err = orchestrator.AsWebService(ctx, envRoot, "127.0.0.1:8080", 2*time.Second)
 
 ```
 
@@ -278,7 +168,6 @@ The `orchestrator` contains a comprehensive integration test suite verifying bot
 | --- | --- | --- |
 | **`orchestrator_test-suite_native_test.go`** | `NATIVE` | Direct execution without containers or network overhead. |
 | **`orchestrator_suite_test.go`** | `NATIVE` & `CONTAINER` | Full integration suite with Docker/Podman container isolation. |
-| **`orchestrator_webservice_test.go`** | `WEBSERVICE` | Spawns background RPC server, transmits Base64 payloads over WebSockets, and verifies staged PDF execution. |
 
 --- 
 ### 1. Native Testing (Fast & Lightweight, Recommended for Getting Started)
