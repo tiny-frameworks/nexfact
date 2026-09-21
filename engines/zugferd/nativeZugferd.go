@@ -68,7 +68,7 @@ func (w *ZugferdWriter) nativeCombine(ctx context.Context, rJob *job.RenderJob, 
 	}
 
 	// 1. Create an isolated temp directory
-	tmpDir, err := os.MkdirTemp("", "nexgate-*")
+	tmpDir, err := os.MkdirTemp("", "nexfact-*")
 	if err != nil {
 		return nil, err
 	}
@@ -150,7 +150,7 @@ func (w *ZugferdWriter) nativeExtract(
 	}
 
 	// 1. Create an isolated temp directory
-	tmpDir, err := os.MkdirTemp("", "nexgate-*")
+	tmpDir, err := os.MkdirTemp("", "nexfact-*")
 	if err != nil {
 		return nil, err
 	}
@@ -204,7 +204,7 @@ func (w *ZugferdWriter) nativeValidate(ctx context.Context, rJob *job.RenderJob,
 	}
 
 	// 1. Create an isolated temp directory
-	tmpDir, err := os.MkdirTemp("", "nexgate-*")
+	tmpDir, err := os.MkdirTemp("", "nexfact-*")
 	if err != nil {
 		return nil, err
 	}

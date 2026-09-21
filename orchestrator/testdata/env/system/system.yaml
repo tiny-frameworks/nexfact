@@ -14,9 +14,9 @@ engine:
   default_queue: "zugferd"    
   container_engine: "podman"    # [ podman | docker ]
   pdf_engine: "loEngine.odt"
-  pdf_provider: "native"        # [ native | container ]
+  pdf_provider: "container"        # [ native | container ]
   zugferd_engine: "mustang-cli.jar"
-  zugferd_provider: "native"  # [ native | container ]
+  zugferd_provider: "container"  # [ native | container ]
 caches:
   seller_cache:
     ttl: 8h

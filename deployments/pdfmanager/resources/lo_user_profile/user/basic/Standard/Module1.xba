@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Module1" script:language="StarBasic">REM  *****  BASIC  *****
+Sub RunTest(Optional sMsg As String)
+    &apos; --- NOTFALL-CHECK 1: System-Ebene ---
+    &apos; Erzeugt sofort eine leere Datei im Mount-Verzeichnis
+    Shell(&quot;touch /tmp/PIEP_Makro_ist_gestartet.txt&quot;)
+
+    &apos; --- NOTFALL-CHECK 2: Basic-Ebene ---
+    Dim fNum As Integer
+    Dim logPath As String
+    logPath = &quot;/tmp/test_alive.log&quot;
+    
+    On Error Resume Next
+    fNum = FreeFile
+    Open logPath For Append As #fNum
+    Print #fNum, &quot;--- Log-Eintrag ---&quot;
+    Print #fNum, &quot;Zeit: &quot; &amp; Now
+    Print #fNum, &quot;Nachricht: &quot; &amp; sMsg
+    Close #fNum
+    
+    &apos; Bestätigung auf System-Ebene, dass wir hier angekommen sind
+    Shell(&quot;touch /tmp/PIEP_Makro_ist_fertig.txt&quot;)
+End Sub
+</script:module>

@@ -9,7 +9,7 @@ podman run --rm --name nexfact-pdfservice --entrypoint bash -it \
   -v ./data/pdfs/in:/data/in:Z \
   -v ./data/artefacts:/data/artefacts:Z,shared \
   -v ./data/pdfs/logs:/data/logs:Z \
-nexgate_pdfmanager
+nexfact_pdfmanager
 
 # Starte den pdf-Container mit watch im Hintergrund (Detached)
 podman run -d --name nexfact-pdfwatcher \
@@ -18,7 +18,7 @@ podman run -d --name nexfact-pdfwatcher \
   -v ./data/pdfs/in:/data/in:Z \
   -v ./data/artefacts:/data/artefacts:Z,shared \
   -v ./data/pdfs/logs:/data/logs:Z \
-  nexgate-pdfmanager
+  nexfact-pdfmanager
 
 
 # Start Terminal im zugferd-Container
@@ -26,7 +26,7 @@ podman run --rm --name nexfact-zfservice --entrypoint bash -it \
   -v ./data/pdfs/in:/data/in:Z \
   -v ./data/artefacts:/data/artefacts:Z,shared \
   -v ./data/pdfs/logs:/data/logs:Z \
-nexgate-zugferd
+nexfact-zugferd
 
 # Starte den zugferd-Container mit watch im Hintergrund (Detached)
 podman run -d --name nexfact-zfwatcher \
@@ -35,6 +35,6 @@ podman run -d --name nexfact-zfwatcher \
   -v ./data/zugferds/in:/data/in:Z \
   -v ./data/artefacts:/data/artefacts:Z,shared \
   -v ./data/zugferds/logs:/data/logs:Z \
-  nexgate-zugferd
+  nexfact-zugferd
 
 

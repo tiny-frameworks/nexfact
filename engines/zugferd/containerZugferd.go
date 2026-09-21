@@ -16,7 +16,7 @@ import (
 )
 
 func (w *ZugferdWriter) renderContainer(ctx context.Context, rJob *job.RenderJob, rInput *writer.RenderInput) (rOutput *writer.RenderOutput, err error) {
-	hbFile := filepath.Join(rInput.RootPath, "logs", "nexgate.heartbeat")
+	hbFile := filepath.Join(rInput.RootPath, "logs", "nexfact.heartbeat")
 	if _, err := writer.CheckHeartbeat(hbFile, w.Heartbeat*2); err != nil {
 		return nil, err
 	}

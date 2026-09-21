@@ -7,7 +7,7 @@ A simple `main.go` snippet serves as the entry point. Default values ​​are u
   - The `default` seller is used (found in `env/sellers/default`).
   - The `native` provider is used (specified in `env/system/systm.yaml` via `zugferd_provider=native` and `pdf_provider=native`).
 
-You can find a detailed code example showing how to integrate nexgate as a library in `orchestrator.orchestrator_test`.
+You can find a detailed code example showing how to integrate nexfact as a library in `orchestrator.orchestrator_test`.
 */
 package main
 
@@ -38,7 +38,7 @@ func run() int {
 
 	// In production, the orchestrator searches env-directory with:
 	// 1: orchestrator.NewDefault():
-	//   1.1: environment-variable: NEXGATE_ENVROOT, if empty:
+	//   1.1: environment-variable: NEXFACT_ENVROOT, if empty:
 	//   1.2: default directory position (env-dir in working-directory)
 	// 2: orchestrator.New(env-path)
 	orch, err := orchestrator.NewDefault()

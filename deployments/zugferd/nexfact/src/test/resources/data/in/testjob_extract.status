@@ -1,0 +1,12 @@
+{
+  "status" : "success",
+  "mode" : "extract",
+  "output" : null,
+  "warnings" : [ ],
+  "errors" : [ ],
+  "meta" : {
+    "/home/georg/go/src/georghagn/nexgate/pkg/orchestrator/testdata/test_attachment.png" : "Additional attachments extracted",
+    "output_file" : "ZUGFeRD XML successful extracted.",
+    "/home/georg/go/src/georghagn/nexgate/pkg/orchestrator/testdata/test_attachment.pdf" : "Additional attachments extracted"
+  }
+}

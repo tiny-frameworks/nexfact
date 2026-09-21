@@ -17,7 +17,7 @@ import (
 
 // WATCH MODE (Container must already running)
 func (w *PdfWriter) renderContainer(ctx context.Context, rJob *job.RenderJob, rInput *writer.RenderInput) error {
-	hbFile := filepath.Join(rInput.RootPath, "logs", "nexgate.heartbeat")
+	hbFile := filepath.Join(rInput.RootPath, "logs", "nexfact.heartbeat")
 	if _, err := writer.CheckHeartbeat(hbFile, w.Heartbeat*2); err != nil {
 		return err
 	}
@@ -43,7 +43,7 @@ func (w *PdfWriter) renderContainer(ctx context.Context, rJob *job.RenderJob, rI
 			return errors.Wrap(
 				errors.ContainerTimeout,
 				fmt.Sprintf("container timeout %v reached", w.TimeOut),
-				"nexgate-engines.pdf.renderWithContainerProvider",
+				"nexfact-engines.pdf.renderWithContainerProvider",
 				renderCtx.Err(),
 			)
 

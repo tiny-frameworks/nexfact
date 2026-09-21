@@ -3,7 +3,7 @@
 
 // //go:build !native && !webservice
 
-//go:build suite
+// //go:build suite
 
 package orchestrator_test
 
@@ -95,13 +95,13 @@ func runGenericOrchestratorTest(t *testing.T, envRoot, resourcePath, jsonFile, e
 
 const (
 	// ** control of debug-test [ CONTAINER | NATIVE ]
-	DEBUG_PROVIDER = NATIVE
-	//DEBUG_PROVIDER = CONTAINER
+	//DEBUG_PROVIDER = NATIVE
+	DEBUG_PROVIDER = CONTAINER
 
 	// ** available scenarions
-	DEBUG_SCENARIO = PAR_SCENE
+	//DEBUG_SCENARIO = PAR_SCENE
 	//DEBUG_SCENARIO = FACTURX_SCENE
-	//DEBUG_SCENARIO = PDF_SCENE
+	DEBUG_SCENARIO = PDF_SCENE
 	//DEBUG_SCENARIO = RUN_MIN
 	//DEBUG_SCENARIO = COMBINE_OK
 	//DEBUG_SCENARIO = VALIDATE_OK

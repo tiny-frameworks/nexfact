@@ -28,8 +28,6 @@ orchestrator/
 ├── internal/
 │   └── preprocessor/        # File staging, Base64 decoding, and URL hydration for RPC inputs
 ├── orchestrator.go          # Core Orchestrator struct, constructors, and RunJsonJob entry point
-├── webservice.go            # WebSocket / JSON-RPC server setup (AsWebService)
-├── webserviceHandler.go     # RPC method implementations (nexgate.process, nexgate.echo)
 ├── generateBase.go          # Pipeline step: Pure XML / PAR generation
 ├── generatePdf.go           # Pipeline step: Layout PDF generation via LibreOffice
 ├── generateZugferd.go       # Pipeline step: Hybrid ZUGFeRD / Factur-X assembly via Mustang

@@ -1,0 +1,11 @@
+{
+  "status" : "success",
+  "mode" : "generate_zf",
+  "output" : null,
+  "warnings" : [ ],
+  "errors" : [ ],
+  "meta" : {
+    "attachments_processed" : 2,
+    "output_file" : "/home/georg/go/src/tiny-frameworks/nexfact/deployments/zugferd/nexfact/./src/test/resources/data/artefacts/testjob/test_standard_without.zf.pdf"
+  }
+}

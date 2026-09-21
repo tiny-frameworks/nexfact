@@ -19,6 +19,8 @@ import (
 
 const DEBUG = false
 
+//const DEBUG = true
+
 const testSeller = "testSeller"
 const ( // provider consts
 	CONTAINER = "container"

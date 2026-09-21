@@ -1,0 +1,15 @@
+{
+    "id": "testjob",
+    "status": "running",
+    "queue": "generate_zf",
+    "message": "",
+    "timestamp": "2026-03-17T14:34:24+01:00",
+    "invoice_id": "RE0816",
+    "pdf_path": "test_standard_without.pdf",
+    "fx_path": "test_standard_xml.xml",
+    "attachments": [
+        "test_attachment.pdf",
+        "test_attachment.png"
+    ]
+}
+

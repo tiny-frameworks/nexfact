@@ -20,13 +20,13 @@ func checkContainer() error {
 	providerRoot := filepath.Join(SellerParams.SellerRoot, "data")
 
 	if SystemParams.Engine.PdfProvider == ProviderContainer {
-		hbFile := filepath.Join(providerRoot, "pdfs", "logs", "nexgate.heartbeat")
+		hbFile := filepath.Join(providerRoot, "pdfs", "logs", "nexfact.heartbeat")
 		if _, err := writer.CheckHeartbeat(hbFile, heartbeatFrequency); err != nil {
 			return err
 		}
 	}
 	if SystemParams.Engine.ZugferdProvider == ProviderContainer {
-		hbFile := filepath.Join(providerRoot, "zugferds", "logs", "nexgate.heartbeat")
+		hbFile := filepath.Join(providerRoot, "zugferds", "logs", "nexfact.heartbeat")
 		if _, err := writer.CheckHeartbeat(hbFile, heartbeatFrequency); err != nil {
 			return err
 		}
@@ -61,8 +61,8 @@ func writeEnv() error {
 	}
 
 	sellerDataPath := filepath.Join(SellerParams.SellerRoot, "data")
-	sellerPdfEnvPath := filepath.Join(sellerDataPath, "pdfs", "logs", "nexgate.env")
-	sellerZugferdEnvPath := filepath.Join(sellerDataPath, "zugferds", "logs", "nexgate.env")
+	sellerPdfEnvPath := filepath.Join(sellerDataPath, "pdfs", "logs", "nexfact.env")
+	sellerZugferdEnvPath := filepath.Join(sellerDataPath, "zugferds", "logs", "nexfact.env")
 
 	pFile, pErr := os.Create(sellerPdfEnvPath)
 	if pErr != nil {
