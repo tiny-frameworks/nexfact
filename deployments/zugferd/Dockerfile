@@ -2,11 +2,6 @@
 # "jammy" ist das stabile Ubuntu 22.04 LTS.
 FROM eclipse-temurin:21-jre-jammy
 
-LABEL org.opencontainers.image.title="nexfact-zugferd"
-LABEL org.opencontainers.image.description="Headless Mustang-project container worker for nexfact"
-LABEL org.opencontainers.image.source="https://codeberg.org/tiny-frameworks/nexfact"
-LABEL org.opencontainers.image.licenses="Apache-2.0"
-
 # 1. Update und Installation der wichtigsten Schriften für PDFBox
 RUN apt-get update && apt-get install -y --no-install-recommends \
     fontconfig \
@@ -28,4 +23,15 @@ ENV WATCH_DIR=/data/in
 
 # 5. Der Entrypoint (Argumente werden dann vom Watcher/Go durchgereicht)
 ENTRYPOINT ["java", "-jar", "/app/processor.jar"]
+
+# 6. OCI Metadata Labels
+LABEL org.opencontainers.image.title="nexfact-zugferd"
+LABEL org.opencontainers.image.description="Factur-X / ZUGFeRD document processing service" 
+LABEL org.opencontainers.image.source="https://codeberg.org/tiny-frameworks/nexfact"
+LABEL org.opencontainers.image.licenses="Apache-2.0"
+LABEL org.opencontainers.image.authors="Georg Hagn <tiny-frameworks>"
+LABEL org.opencontainers.image.url="https://codeberg.org/tiny-frameworks/nexfact"
+LABEL org.opencontainers.image.documentation="https://codeberg.org/tiny-frameworks/nexfact/src/branch/main/README.md"
+LABEL org.opencontainers.image.licenses="Apache-2.0"
+LABEL org.opencontainers.image.vendor="tiny-frameworks"
 

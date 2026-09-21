@@ -1,5 +1,8 @@
+[![Codeberg Repository](https://img.shields.io/badge/Codeberg-nexfact-blue?logo=codeberg&logoColor=white)](https://codeberg.org/tiny-frameworks/nexfact)
+[![GHCR](https://img.shields.io/badge/Container-ghcr.io-blue?logo=github)](https://github.com/tiny-frameworks/nexfact/pkgs/container/nexfact-zugferd)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://codeberg.org/tiny-frameworks/nexfact/src/branch/main/LICENSE)
 
-## nexfact-zugferdmanager
+## nexfact-zugferd
 <sup>the *podman container zugferdmanager*, member of **GSF-nexfact ZUGFeRD** family.</sup>
 
 ---
@@ -28,6 +31,16 @@ zugferd/
 ├── podman_build.sh           # Convenience build script
 └── LICENSE
 
+```
+
+---
+
+## Quick Start / Container
+
+Das OCI-Container-Image wird über die GitHub Container Registry bereitgestellt:
+
+```bash
+podman pull ghcr.io/tiny-frameworks/nexfact-zugferd:latest
 ```
 
 ---

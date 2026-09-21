@@ -1,3 +1,6 @@
+[![Codeberg Repository](https://img.shields.io/badge/Codeberg-nexfact-blue?logo=codeberg&logoColor=white)](https://codeberg.org/tiny-frameworks/nexfact)
+[![GHCR](https://img.shields.io/badge/Container-ghcr.io-blue?logo=github)](https://github.com/tiny-frameworks/nexfact/pkgs/container/nexfact-pdfmanager)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://codeberg.org/tiny-frameworks/nexfact/src/branch/main/LICENSE)
 
 ## nexfact-pdfmanager
 <sup>the *podman container pdfmanager*, member of **GSF-nexfact ZUGFeRD** family.</sup>
@@ -25,6 +28,17 @@ pdfmanager/
 └── LICENSE
 
 ```
+
+---
+
+## Quick Start / Container
+
+Das OCI-Container-Image wird über die GitHub Container Registry bereitgestellt:
+
+```bash
+podman pull ghcr.io/tiny-frameworks/nexfact-pdfmanager:latest
+```
+
 ---
 
 ## Components & Configuration

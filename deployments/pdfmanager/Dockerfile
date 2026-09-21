@@ -1,10 +1,5 @@
 FROM ubuntu:22.04
 
-LABEL org.opencontainers.image.title="nexfact-pdfmanager"
-LABEL org.opencontainers.image.description="Headless LibreOffice container worker for nexfact"
-LABEL org.opencontainers.image.source="https://codeberg.org/tiny-frameworks/nexfact"
-LABEL org.opencontainers.image.licenses="Apache-2.0"
-
 ENV DEBIAN_FRONTEND=noninteractive
 
 # 1. Schlanke Installation
@@ -32,5 +27,15 @@ ENV WATCH_DIR=/data/in
 
 # Wir starten das Python-Script als Hauptprozess
 CMD ["python3", "nexfact_manager.py"]
+
+# OCI Metadata Labels
+LABEL org.opencontainers.image.title="nexfact-pdfmanager"
+LABEL org.opencontainers.image.description="Headless LibreOffice container worker for nexfact"
+LABEL org.opencontainers.image.authors="Georg Hagn <tiny-frameworks>"
+LABEL org.opencontainers.image.url="https://codeberg.org/tiny-frameworks/nexfact"
+LABEL org.opencontainers.image.source="https://codeberg.org/tiny-frameworks/nexfact"
+LABEL org.opencontainers.image.documentation="https://codeberg.org/tiny-frameworks/nexfact/src/branch/main/README.md"
+LABEL org.opencontainers.image.licenses="Apache-2.0"
+LABEL org.opencontainers.image.vendor="tiny-frameworks"
 
 
