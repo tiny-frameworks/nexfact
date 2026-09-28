@@ -1,9 +1,7 @@
 // Copyright 2026 Georg Hagn
 // SPDX-License-Identifier: Apache-2.0
 
-// //go:build !native && !webservice
-
-// //go:build suite
+//go:build !native
 
 package orchestrator_test
 

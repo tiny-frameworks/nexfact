@@ -1,8 +1,7 @@
 
-<sup>🌍 **Language:** 🇩🇪 [German →](README.de.md)</sup>
+[![Codeberg Release](https://img.shields.io/codeberg/v/release/tiny-frameworks/nexfact-assets?logo=codeberg&logoColor=white)](https://codeberg.org/tiny-frameworks/nexfact-assets)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
----
-|[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)| |
 |----|----|
 |![GSF-NexFact-Logo](nexfact.png)| ***GSF-NexFact***<br>A modular system for generating legally compliant electronic invoices (ZUGFeRD/Factur-X). It combines the flexibility of Go with the layout power of LibreOffice and the standards compliance of the Mustang project.|
 
