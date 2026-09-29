@@ -1,0 +1,11 @@
+{
+  "status" : "success",
+  "mode" : "combine",
+  "output" : null,
+  "warnings" : [ ],
+  "errors" : [ ],
+  "meta" : {
+    "attachments_processed" : 2,
+    "output_file" : "/data/artefacts/20260929-083822-deaa/20260929-083822-deaa.zf.pdf"
+  }
+}

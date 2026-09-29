@@ -1,0 +1,11 @@
+{
+  "status" : "success",
+  "mode" : "generate_zf",
+  "output" : null,
+  "warnings" : [ ],
+  "errors" : [ ],
+  "meta" : {
+    "attachments_processed" : 0,
+    "output_file" : "/data/artefacts/20260929-083819-8111/20260929-083819-8111.zf.pdf"
+  }
+}

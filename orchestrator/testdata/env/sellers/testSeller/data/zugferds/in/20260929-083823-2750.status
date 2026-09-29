@@ -1,0 +1,12 @@
+{
+  "status" : "success",
+  "mode" : "extract",
+  "output" : null,
+  "warnings" : [ ],
+  "errors" : [ ],
+  "meta" : {
+    "test_attachment.png" : "Additional attachments extracted",
+    "test_attachment.pdf" : "Additional attachments extracted",
+    "output_file" : "ZUGFeRD XML successful extracted."
+  }
+}

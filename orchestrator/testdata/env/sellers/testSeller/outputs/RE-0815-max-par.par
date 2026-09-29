@@ -1,0 +1,88 @@
+
+# Dateiname: ./test/data/GSF_DIN-5008_Invoice-Max.par
+# Demo und Test Paraemter File. 
+# Zugehöriges .ott File: ./templates/GSF_DIN-5008_Invoice-Max.ott
+
+# Dateien - Ablage (Globals)
+# Präfix: g-
+#------------------
+# ott: Vorlage zum Erzeugen des Dokuments
+# odt: Speicherort des fertigen ODF-Dokuments (saveTo)
+# pdf: Speicherort des fertigen PDF-Dokuments (exportTo)
+
+g-ott = /home/georg/go/src/tiny-frameworks/nexfact/orchestrator/testdata/env/sellers/testSeller/templates/defaultInvoice.ott
+g-odt = /home/georg/go/src/tiny-frameworks/nexfact/orchestrator/testdata/env/sellers/testSeller/outputs/RE-0815-max-par.odt
+g-pdf = /home/georg/go/src/tiny-frameworks/nexfact/orchestrator/testdata/env/sellers/testSeller/outputs/RE-0815-max-par.pdf
+
+
+# einfache Parameter
+# Präfix: p-
+#-------------------
+# Absender - Adresse
+
+
+# Postvermerkzeilen / Absender - AdresseZeile
+
+p-senderLine = Tiny Frameworks | Techpark 42 | 80331 München
+p-postalNote1 = Vertraulich / persönlich
+p-postalNote2 = Nicht nachsenden
+p-postalNote3 = Einschreiben
+p-infoDepartment = Development
+p-infoDate = 02.01.2026
+
+
+# Empfaengerzeilen
+
+p-recipient1 = Franz Fröhlich AG
+p-recipient2 = Einkauf Herr Ansprech
+p-recipient3 = Carnica
+p-recipient4 = Musterstrasse 64
+p-recipient5 = 01221 Musterdorf
+p-recipient6 = Österreich
+
+
+# Info Block
+
+p-infoContact = Anton Ansprech
+p-infoPhone = +49 8002 123 456
+p-infoFax = ham wa nich
+p-infoEmail = master@bees.bee
+
+
+# gesetzliche Angaben
+p-customerID = testSeller
+p-invoiceID = RE-0815-max-par
+p-issueDate = 05.01.2026
+p-serviceDate = 04.01.2026
+
+# Zahlungsbedingugen
+
+p-dueDescription = innerhalb von 3 Tagen mit 3% Skonto. 
+p-dueDate = 02.03.2026
+
+
+# Impressum
+
+p-impressumAddresses = Tiny Frameworks | Tech Service GmbH | Techpark 42 | 80331 Musterstadt
+p-impressumContacts = Tel: +49 8002 123 456 | Mail: info@tiny-frameworks.eu | www.tiny-frameworks.eu
+p-impressumBank = Muster Bank | IBAN: DE12 3456 7890 1234 5678 90 | BIC: BYABCDEFGHX
+p-impressumLegal = GmbH Gesellschaft | Sitz: München | HRB: 123456 AG München | USt ID: DE123456789
+
+
+# Tabellen Decimal Point = . Feld-Trenner = ;
+# Präfix: t-
+# lh: lineHeader; li: lineItem; ls: lineSum; vi: vatItem; vs: vatSum; zi: Payment amount Item
+# Table is sorted by column 1 (t-leistung[aaxx])
+# Tabelle mit Namen: leistung
+t-leistung[li00]=01;Go Entwicklungsservice;std;10.50;95.00;997.50;19.00
+t-leistung[li01]=02;Dokumentations-Pauschale;psc;1.00;45.50;45.50;19.00
+t-leistung[li02]=03;Go-Grundkurs für Fortgeschrittene;stk;1.00;150.00;150.00;19.00
+t-leistung[li03]=04;LibreOffice Basic Beruhigungstee;ltr;5.00;3.50;17.50;7.00
+t-leistung[ls01]= ;Summe;netto; ; ;1210.50;
+t-leistung[vi00]= ; ;USt; ;1193.00;226.67;19.00
+t-leistung[vi01]= ; ;USt; ;17.50;1.23;7.00
+t-leistung[vs01]= ;Summe;USt; ; ;227.90;
+t-leistung[zb01]= ;Gesamtbetrag;EUR; ; ;1438.40;
+
+
+

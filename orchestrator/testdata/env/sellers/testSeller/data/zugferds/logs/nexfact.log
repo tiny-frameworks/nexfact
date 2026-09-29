@@ -1,0 +1,28 @@
+2026-09-29 06:36:13,887 [INFO] Starte ZUGFeRD System with Version: 1.0.0
+2026-09-29 06:36:14,003 [INFO] Starting smart polling in directory: /data/in
+2026-09-29 06:36:14,004 [INFO] Configuration loaded from: /data/logs/nexfact.env
+2026-09-29 06:36:14,004 [INFO]     Configuration: WatchSleep = 2, Heartbeat = 30, configReload = 240
+2026-09-29 06:36:43,603 [INFO] trying to combine /data/artefacts/20260929-083641-737d/20260929-083641-737d.pdf and /data/artefacts/20260929-083641-737d/20260929-083641-737d.xml into /data/artefacts/20260929-083641-737d/20260929-083641-737d.zf.pdf
+2026-09-29 06:36:44,184 [INFO] trying to combine /data/artefacts/20260929-083644-1f16/20260929-083644-1f16.pdf and /data/artefacts/20260929-083644-1f16/20260929-083644-1f16.xml into /data/artefacts/20260929-083644-1f16/20260929-083644-1f16.zf.pdf
+2026-09-29 06:36:44,189 [INFO] trying to add additional attachments into /data/artefacts/20260929-083644-1f16/20260929-083644-1f16.zf.pdf
+2026-09-29 06:36:44,190 [INFO] added attachments test_attachment.png
+2026-09-29 06:36:44,190 [INFO] added attachments test_attachment.pdf
+2026-09-29 06:36:51,180 [ERROR] Input PDF /data/artefacts/20260929-083651-8740/20260929-083651-8740.pdf not found
+2026-09-29 06:36:56,980 [INFO] trying to combine /data/artefacts/20260929-083653-5aac/20260929-083653-5aac.pdf and /data/artefacts/20260929-083653-5aac/20260929-083653-5aac.xml into /data/artefacts/20260929-083653-5aac/20260929-083653-5aac.zf.pdf
+2026-09-29 06:36:57,188 [INFO] trying to combine /data/artefacts/20260929-083657-c7c4/20260929-083657-c7c4.pdf and /data/artefacts/20260929-083657-c7c4/20260929-083657-c7c4.xml into /data/artefacts/20260929-083657-c7c4/20260929-083657-c7c4.zf.pdf
+2026-09-29 06:36:57,192 [INFO] trying to add additional attachments into /data/artefacts/20260929-083657-c7c4/20260929-083657-c7c4.zf.pdf
+2026-09-29 06:36:57,192 [INFO] added attachments test_attachment.png
+2026-09-29 06:36:57,192 [INFO] added attachments test_attachment.pdf
+2026-09-29 06:36:58,002 [ERROR] Input PDF /data/artefacts/20260929-083657-b417/20260929-083657-b417.pdf not found
+2026-09-29 06:38:10,120 [INFO] trying to combine /data/artefacts/20260929-083808-7b4f/20260929-083808-7b4f.pdf and /data/artefacts/20260929-083808-7b4f/20260929-083808-7b4f.xml into /data/artefacts/20260929-083808-7b4f/20260929-083808-7b4f.zf.pdf
+2026-09-29 06:38:10,646 [INFO] trying to combine /data/artefacts/20260929-083810-9141/20260929-083810-9141.pdf and /data/artefacts/20260929-083810-9141/20260929-083810-9141.xml into /data/artefacts/20260929-083810-9141/20260929-083810-9141.zf.pdf
+2026-09-29 06:38:10,648 [INFO] trying to add additional attachments into /data/artefacts/20260929-083810-9141/20260929-083810-9141.zf.pdf
+2026-09-29 06:38:10,648 [INFO] added attachments test_attachment.png
+2026-09-29 06:38:10,648 [INFO] added attachments test_attachment.pdf
+2026-09-29 06:38:16,841 [ERROR] Input PDF /data/artefacts/20260929-083816-eb6b/20260929-083816-eb6b.pdf not found
+2026-09-29 06:38:22,618 [INFO] trying to combine /data/artefacts/20260929-083819-8111/20260929-083819-8111.pdf and /data/artefacts/20260929-083819-8111/20260929-083819-8111.xml into /data/artefacts/20260929-083819-8111/20260929-083819-8111.zf.pdf
+2026-09-29 06:38:22,828 [INFO] trying to combine /data/artefacts/20260929-083822-deaa/20260929-083822-deaa.pdf and /data/artefacts/20260929-083822-deaa/20260929-083822-deaa.xml into /data/artefacts/20260929-083822-deaa/20260929-083822-deaa.zf.pdf
+2026-09-29 06:38:22,830 [INFO] trying to add additional attachments into /data/artefacts/20260929-083822-deaa/20260929-083822-deaa.zf.pdf
+2026-09-29 06:38:22,830 [INFO] added attachments test_attachment.png
+2026-09-29 06:38:22,830 [INFO] added attachments test_attachment.pdf
+2026-09-29 06:38:23,443 [ERROR] Input PDF /data/artefacts/20260929-083823-2750/20260929-083823-2750.pdf not found

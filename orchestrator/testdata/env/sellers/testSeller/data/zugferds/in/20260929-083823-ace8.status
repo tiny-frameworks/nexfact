@@ -1,0 +1,8 @@
+{
+  "status" : "success",
+  "mode" : "validate",
+  "output" : null,
+  "warnings" : [ ],
+  "errors" : [ ],
+  "meta" : { }
+}

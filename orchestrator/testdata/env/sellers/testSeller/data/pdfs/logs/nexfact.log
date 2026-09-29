@@ -1,0 +1,73 @@
+2026-09-29 06:36:10,547 [INFO] Starte LibreOffice Listener...
+2026-09-29 06:36:12,549 [INFO] Stateless Worker überwacht /data/in
+2026-09-29 06:36:12,551 [INFO] Config geladen: Timeout=10s, Sleep=2s, Heartbeat=30s, Config=240s
+2026-09-29 06:36:40,576 [INFO] Starte Json-Job: 20260929-083639-8c04.json
+2026-09-29 06:36:40,576 [INFO] LO Aufruf mit: /data/artefacts/20260929-083639-8c04/20260929-083639-8c04.par
+2026-09-29 06:36:40,576 [INFO] Erwarte potentielle Fehlerdatei unter: /data/logs/20260929-083639-8c04.error
+2026-09-29 06:36:40,576 [INFO] par-File: /data/artefacts/20260929-083639-8c04/20260929-083639-8c04.par
+"20260929-06:36:41 AM","INFO ","Parameterpath: file:///data/artefacts/20260929-083639-8c04/20260929-083639-8c04.par"
+"20260929-06:36:41 AM","INFO ","parfileUrl:file:///data/artefacts/20260929-083639-8c04/20260929-083639-8c04.par"
+"20260929-06:36:41 AM","INFO ","EndLoop"
+"20260929-06:36:41 AM","INFO ","Finalize"
+2026-09-29 06:36:50,617 [ERROR] TIMEOUT! LibreOffice bei Job 20260929-083639-8c04 hart beendet.
+2026-09-29 06:36:50,626 [INFO] err_file: /data/logs/20260929-083639-8c04.error
+2026-09-29 06:36:50,626 [INFO] Content: "20260929-06:36:41 AM",1,"An exception occurred 
+Type: com.sun.star.io.IOException
+Message: SfxBaseModel::impl_store <file:///data/artefacts/20260929-083639-8c04/20260929-083639-8c04.pdf> failed: 0x302(Error Area:Io Class:NotExists Code:2) ./sfx2/source/doc/sfxbasemodel.cxx:3202 ./sfx2/source/doc/sfxbasemodel.cxx:1775.",283
+2026-09-29 06:36:50,626 [ERROR] Fehler bei: 20260929-083639-8c04.json
+2026-09-29 06:36:50,626 [INFO] Job beendet. Lieferschein erstellt: 20260929-083639-8c04.done
+2026-09-29 06:36:52,628 [INFO] Starte Json-Job: 20260929-083651-274e.json
+2026-09-29 06:36:52,628 [INFO] LO Aufruf mit: /data/artefacts/20260929-083651-274e/20260929-083651-274e.par
+2026-09-29 06:36:52,629 [INFO] Erwarte potentielle Fehlerdatei unter: /data/logs/20260929-083651-274e.error
+2026-09-29 06:36:52,629 [INFO] par-File: /data/artefacts/20260929-083651-274e/20260929-083651-274e.par
+"20260929-06:36:52 AM","INFO ","Parameterpath: file:///data/artefacts/20260929-083651-274e/20260929-083651-274e.par"
+"20260929-06:36:52 AM","INFO ","parfileUrl:file:///data/artefacts/20260929-083651-274e/20260929-083651-274e.par"
+"20260929-06:36:53 AM","INFO ","EndLoop"
+"20260929-06:36:53 AM","INFO ","Finalize"
+2026-09-29 06:36:53,809 [INFO] err_file: /data/logs/20260929-083651-274e.error
+2026-09-29 06:36:53,809 [INFO] Erfolg: 20260929-083651-274e.json
+2026-09-29 06:36:53,809 [INFO] Job beendet. Lieferschein erstellt: 20260929-083651-274e.done
+2026-09-29 06:36:55,812 [INFO] Starte Json-Job: 20260929-083653-5aac.json
+2026-09-29 06:36:55,812 [INFO] LO Aufruf mit: /data/artefacts/20260929-083653-5aac/20260929-083653-5aac.par
+2026-09-29 06:36:55,812 [INFO] Erwarte potentielle Fehlerdatei unter: /data/logs/20260929-083653-5aac.error
+2026-09-29 06:36:55,812 [INFO] par-File: /data/artefacts/20260929-083653-5aac/20260929-083653-5aac.par
+"20260929-06:36:56 AM","INFO ","Parameterpath: file:///data/artefacts/20260929-083653-5aac/20260929-083653-5aac.par"
+"20260929-06:36:56 AM","INFO ","parfileUrl:file:///data/artefacts/20260929-083653-5aac/20260929-083653-5aac.par"
+"20260929-06:36:56 AM","INFO ","EndLoop"
+"20260929-06:36:56 AM","INFO ","Finalize"
+2026-09-29 06:36:56,918 [INFO] err_file: /data/logs/20260929-083653-5aac.error
+2026-09-29 06:36:56,918 [INFO] Erfolg: 20260929-083653-5aac.json
+2026-09-29 06:36:56,918 [INFO] Job beendet. Lieferschein erstellt: 20260929-083653-5aac.done
+2026-09-29 06:38:06,987 [INFO] Starte Json-Job: 20260929-083806-9885.json
+2026-09-29 06:38:06,987 [INFO] LO Aufruf mit: /data/artefacts/20260929-083806-9885/20260929-083806-9885.par
+2026-09-29 06:38:06,987 [INFO] Erwarte potentielle Fehlerdatei unter: /data/logs/20260929-083806-9885.error
+2026-09-29 06:38:06,987 [INFO] par-File: /data/artefacts/20260929-083806-9885/20260929-083806-9885.par
+"20260929-06:38:07 AM","INFO ","Parameterpath: file:///data/artefacts/20260929-083806-9885/20260929-083806-9885.par"
+"20260929-06:38:07 AM","INFO ","parfileUrl:file:///data/artefacts/20260929-083806-9885/20260929-083806-9885.par"
+"20260929-06:38:07 AM","INFO ","EndLoop"
+"20260929-06:38:07 AM","INFO ","Finalize"
+2026-09-29 06:38:08,137 [INFO] err_file: /data/logs/20260929-083806-9885.error
+2026-09-29 06:38:08,138 [INFO] Erfolg: 20260929-083806-9885.json
+2026-09-29 06:38:08,138 [INFO] Job beendet. Lieferschein erstellt: 20260929-083806-9885.done
+2026-09-29 06:38:18,146 [INFO] Starte Json-Job: 20260929-083817-061c.json
+2026-09-29 06:38:18,147 [INFO] LO Aufruf mit: /data/artefacts/20260929-083817-061c/20260929-083817-061c.par
+2026-09-29 06:38:18,147 [INFO] Erwarte potentielle Fehlerdatei unter: /data/logs/20260929-083817-061c.error
+2026-09-29 06:38:18,147 [INFO] par-File: /data/artefacts/20260929-083817-061c/20260929-083817-061c.par
+"20260929-06:38:18 AM","INFO ","Parameterpath: file:///data/artefacts/20260929-083817-061c/20260929-083817-061c.par"
+"20260929-06:38:18 AM","INFO ","parfileUrl:file:///data/artefacts/20260929-083817-061c/20260929-083817-061c.par"
+"20260929-06:38:18 AM","INFO ","EndLoop"
+"20260929-06:38:18 AM","INFO ","Finalize"
+2026-09-29 06:38:19,318 [INFO] err_file: /data/logs/20260929-083817-061c.error
+2026-09-29 06:38:19,318 [INFO] Erfolg: 20260929-083817-061c.json
+2026-09-29 06:38:19,318 [INFO] Job beendet. Lieferschein erstellt: 20260929-083817-061c.done
+2026-09-29 06:38:21,320 [INFO] Starte Json-Job: 20260929-083819-8111.json
+2026-09-29 06:38:21,320 [INFO] LO Aufruf mit: /data/artefacts/20260929-083819-8111/20260929-083819-8111.par
+2026-09-29 06:38:21,321 [INFO] Erwarte potentielle Fehlerdatei unter: /data/logs/20260929-083819-8111.error
+2026-09-29 06:38:21,321 [INFO] par-File: /data/artefacts/20260929-083819-8111/20260929-083819-8111.par
+"20260929-06:38:21 AM","INFO ","Parameterpath: file:///data/artefacts/20260929-083819-8111/20260929-083819-8111.par"
+"20260929-06:38:21 AM","INFO ","parfileUrl:file:///data/artefacts/20260929-083819-8111/20260929-083819-8111.par"
+"20260929-06:38:21 AM","INFO ","EndLoop"
+"20260929-06:38:21 AM","INFO ","Finalize"
+2026-09-29 06:38:22,431 [INFO] err_file: /data/logs/20260929-083819-8111.error
+2026-09-29 06:38:22,431 [INFO] Erfolg: 20260929-083819-8111.json
+2026-09-29 06:38:22,431 [INFO] Job beendet. Lieferschein erstellt: 20260929-083819-8111.done
